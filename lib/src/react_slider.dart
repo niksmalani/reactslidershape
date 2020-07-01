@@ -1,21 +1,11 @@
-library reactslidershape;
-
 import 'package:flutter/material.dart';
 
 class CustomSliderThumbReact extends SliderComponentShape {
-  /// Create a slider thumb that draws a circle.
   CustomSliderThumbReact(
       {this.enabledThumbRadius = 10.0, this.disabledThumbRadius});
 
-  /// The preferred radius of the round thumb shape when the slider is enabled.
-  ///
-  /// If it is not provided, then the material default of 10 is used.
   final double enabledThumbRadius;
 
-  /// The preferred radius of the round thumb shape when the slider is disabled.
-  ///
-  /// If no disabledRadius is provided, then it is equal to the
-  /// [enabledThumbRadius]
   final double disabledThumbRadius;
   double get _disabledThumbRadius => disabledThumbRadius ?? enabledThumbRadius;
 
@@ -77,12 +67,8 @@ class CustomSliderThumbReact extends SliderComponentShape {
 }
 
 class SliderOverlayReact extends SliderComponentShape {
-  /// Create a slider thumb overlay that draws a circle.
   const SliderOverlayReact({this.overlayRadius = 24.0});
 
-  /// The preferred radius of the round thumb shape when enabled.
-  ///
-  /// If it is not provided, then half of the track height is used.
   final double overlayRadius;
 
   @override

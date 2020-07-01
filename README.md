@@ -1,14 +1,38 @@
-# reactslidershape
+# react_slider_shape
 
 A new Flutter package.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+you can customize slider theme in slider overlay shape and
+slider thumb shape using this package.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Example
+
+    @override
+      Widget build(BuildContext context) {
+        return SliderTheme(
+          data: SliderThemeData(
+              overlayColor: Colors.pinkAccent[100],
+              overlayShape: SliderOverlayReact(overlayRadius: 30),
+              thumbColor: Colors.pink,
+              trackHeight: 10,
+              disabledThumbColor: Colors.amber,
+              activeTrackColor: Colors.pinkAccent,
+              inactiveTrackColor: Colors.pinkAccent[100].withOpacity(.5),
+              thumbShape: CustomSliderThumbReact(
+                  disabledThumbRadius: 30, enabledThumbRadius: 14),
+              valueIndicatorColor: Colors.white),
+          child: Slider(
+              value: value,
+              onChanged: (value) {
+                setState(() {
+                  this.value = value;
+                });
+              }),
+        );
+      }
+
+
+
+
